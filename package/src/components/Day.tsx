@@ -1,5 +1,5 @@
 import React from 'react';
-import { IconButton, Typography, Box } from '@mui/material';
+import {Box, IconButton, Typography} from '@mui/material';
 
 interface DayProps {
   filled?: boolean;
@@ -14,16 +14,16 @@ interface DayProps {
 }
 
 const Day: React.FunctionComponent<DayProps> = ({
-  startOfRange,
-  endOfRange,
-  disabled,
-  highlighted,
-  outlined,
-  filled,
-  onClick,
-  onHover,
-  value,
-}: DayProps) => {
+                                                  startOfRange,
+                                                  endOfRange,
+                                                  disabled,
+                                                  highlighted,
+                                                  outlined,
+                                                  filled,
+                                                  onClick,
+                                                  onHover,
+                                                  value,
+                                                }: DayProps) => {
 
   return (
     <Box

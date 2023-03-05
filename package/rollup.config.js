@@ -4,7 +4,6 @@ import commonjs from '@rollup/plugin-commonjs';
 import external from 'rollup-plugin-peer-deps-external';
 import resolve from '@rollup/plugin-node-resolve';
 import url from '@rollup/plugin-url';
-
 import pkg from './package.json';
 
 const commonjsOptions = {
@@ -28,7 +27,7 @@ export default {
   external: [/@babel\/runtime/],
   plugins: [
     external(),
-    url({ exclude: ['**/*.svg'] }),
+    url({exclude: ['**/*.svg']}),
     babel({
       babelHelpers: 'runtime',
       exclude: 'node_modules/**',
@@ -36,7 +35,6 @@ export default {
     }),
     resolve(),
     typescript({
-      rollupCommonJSResolveHack: true,
       clean: true,
     }),
     commonjs(commonjsOptions),

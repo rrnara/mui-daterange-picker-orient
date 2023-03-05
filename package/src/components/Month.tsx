@@ -1,15 +1,11 @@
 import React from "react";
-import { Paper, Grid, Typography } from "@mui/material";
-import {
-  getDate, isSameMonth, isToday, format, isWithinInterval
-} from "date-fns";
-import {
-  chunks, getDaysInMonth, isStartOfRange, isEndOfRange, inDateRange, isRangeSameDay
-} from "../utils";
+import {Grid, Paper, Typography} from "@mui/material";
+import {format, getDate, isSameMonth, isToday, isWithinInterval} from "date-fns";
+import {chunks, getDaysInMonth, inDateRange, isEndOfRange, isRangeSameDay, isStartOfRange} from "../utils";
 import Header from "./Header";
 import Day from "./Day";
 
-import { NavigationAction, DateRange } from "../types";
+import {DateRange, NavigationAction} from "../types";
 
 
 interface MonthProps {
@@ -51,12 +47,15 @@ const Month: React.FunctionComponent<MonthProps> = (props: MonthProps) => {
 
   const weekStartsOn = locale?.options?.weekStartsOn || 0;
   const WEEK_DAYS = typeof locale !== 'undefined'
-    ? [...Array(7).keys()].map(d => locale.localize?.day((d+weekStartsOn) % 7, {width: 'short', context: 'standalone'}))
+    ? [...Array(7).keys()].map(d => locale.localize?.day((d + weekStartsOn) % 7, {
+      width: 'short',
+      context: 'standalone'
+    }))
     : ["Su", "Mo", "Tu", "We", "Th", "Fr", "Sa"];
   const [back, forward] = props.navState;
 
   return (
-    <Paper square elevation={0} sx={{ width: 290 }}>
+    <Paper square elevation={0} sx={{width: 290}}>
       <Grid container>
         <Header
           date={date}
@@ -114,7 +113,7 @@ const Month: React.FunctionComponent<MonthProps> = (props: MonthProps) => {
                     highlighted={highlighted && !isRangeOneDay}
                     disabled={
                       !isSameMonth(date, day)
-                      || !isWithinInterval(day, { start: minDate, end: maxDate })
+                      || !isWithinInterval(day, {start: minDate, end: maxDate})
                     }
                     startOfRange={isStart && !isRangeOneDay}
                     endOfRange={isEnd && !isRangeOneDay}

@@ -1,26 +1,26 @@
 import {
-  startOfWeek,
-  startOfMonth,
-  endOfWeek,
-  endOfMonth,
-  isBefore,
   addDays,
-  isSameDay,
-  isWithinInterval,
-  isSameMonth,
   addMonths,
-  parseISO,
+  endOfMonth,
+  endOfWeek,
+  isBefore,
+  isSameDay,
+  isSameMonth,
   isValid,
-  min,
+  isWithinInterval,
   max,
+  min,
+  parseISO,
+  startOfMonth,
+  startOfWeek,
 } from 'date-fns';
-import { DateRange } from './types';
+import {DateRange} from './types';
 
 export const identity = <T>(x: T) => x;
 
 export const chunks = <T>(array: ReadonlyArray<T>, size: number): T[][] => (
   Array.from(
-    { length: Math.ceil(array.length / size) },
+    {length: Math.ceil(array.length / size)},
     (_v, i) => array.slice(i * size, i * size + size),
   )
 );
@@ -37,23 +37,23 @@ export const getDaysInMonth = (date: Date, locale?: Locale) => {
   return days;
 };
 
-export const isStartOfRange = ({ startDate }: DateRange, day: Date) => (
+export const isStartOfRange = ({startDate}: DateRange, day: Date) => (
   (startDate && isSameDay(day, startDate)) as boolean
 );
 
-export const isEndOfRange = ({ endDate }: DateRange, day: Date) => (
+export const isEndOfRange = ({endDate}: DateRange, day: Date) => (
   (endDate && isSameDay(day, endDate)) as boolean
 );
 
-export const inDateRange = ({ startDate, endDate }: DateRange, day: Date) => (
+export const inDateRange = ({startDate, endDate}: DateRange, day: Date) => (
   startDate
   && endDate
-  && (isWithinInterval(day, { start: startDate, end: endDate })
-  || isSameDay(day, startDate)
-  || isSameDay(day, endDate))
+  && (isWithinInterval(day, {start: startDate, end: endDate})
+    || isSameDay(day, startDate)
+    || isSameDay(day, endDate))
 ) as boolean;
 
-export const isRangeSameDay = ({ startDate, endDate }: DateRange) => {
+export const isRangeSameDay = ({startDate, endDate}: DateRange) => {
   if (startDate && endDate) {
     return isSameDay(startDate, endDate);
   }
@@ -71,7 +71,7 @@ export const parseOptionalDate = (date: Date | string | Falsy, defaultValue: Dat
 };
 
 export const getValidatedMonths = (range: DateRange, minDate: Date, maxDate: Date) => {
-  const { startDate, endDate } = range;
+  const {startDate, endDate} = range;
   if (startDate && endDate) {
     const newStart = max([startDate, minDate]);
     const newEnd = min([endDate, maxDate]);

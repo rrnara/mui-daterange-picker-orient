@@ -11,8 +11,8 @@ type DefinedRangesProps = {
 };
 
 const isSameRange = (first: DateRange, second: DateRange) => {
-  const { startDate: fStart, endDate: fEnd } = first;
-  const { startDate: sStart, endDate: sEnd } = second;
+  const {startDate: fStart, endDate: fEnd} = first;
+  const {startDate: sStart, endDate: sEnd} = second;
   if (fStart && sStart && fEnd && sEnd) {
     return isSameDay(fStart, sStart) && isSameDay(fEnd, sEnd);
   }
@@ -20,10 +20,10 @@ const isSameRange = (first: DateRange, second: DateRange) => {
 };
 
 const DefinedRanges: React.FunctionComponent<DefinedRangesProps> = ({
-  ranges,
-  setRange,
-  selectedRange,
-}: DefinedRangesProps) => (
+                                                                      ranges,
+                                                                      setRange,
+                                                                      selectedRange,
+                                                                    }: DefinedRangesProps) => (
   <List>
     {ranges.map((range, idx) => (
       <ListItem button

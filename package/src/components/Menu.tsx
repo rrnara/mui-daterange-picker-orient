@@ -1,17 +1,12 @@
 /* eslint-disable object-curly-newline */
 import React from 'react';
-import { Divider, Grid, Paper, Typography } from '@mui/material';
+import {Divider, Grid, Paper, Typography} from '@mui/material';
 import {differenceInCalendarMonths, format} from 'date-fns';
-import ArrowRightAlt from '@mui/icons-material/ArrowRightAlt';
+import ArrowRightAltIcon from '@mui/icons-material/ArrowRightAlt';
 import Month from './Month';
 import DefinedRanges from './DefinedRanges';
-import {
-  DateRange,
-  DefinedRange,
-  Setter,
-  NavigationAction,
-} from '../types';
-import { MARKERS } from './Markers';
+import {DateRange, DefinedRange, NavigationAction, Setter,} from '../types';
+import {MARKERS} from './Markers';
 
 interface MenuProps {
   dateRange: DateRange;
@@ -54,7 +49,7 @@ const Menu: React.FunctionComponent<MenuProps> = (props: MenuProps) => {
     locale
   } = props;
 
-  const { startDate, endDate } = dateRange;
+  const {startDate, endDate} = dateRange;
   const canNavigateCloser = differenceInCalendarMonths(secondMonth, firstMonth) >= 2;
   const commonProps = {
     dateRange, minDate, maxDate, helpers, handlers,
@@ -71,22 +66,22 @@ const Menu: React.FunctionComponent<MenuProps> = (props: MenuProps) => {
         </Grid>
         <Divider orientation="vertical" flexItem/>
         <Grid>
-          <Grid container sx={{ padding: '20px 70px' }} alignItems="center">
-            <Grid item sx={{ flex: 1, textAlign: 'center' }}>
+          <Grid container sx={{padding: '20px 70px'}} alignItems="center">
+            <Grid item sx={{flex: 1, textAlign: 'center'}}>
               <Typography variant="subtitle1">
                 {startDate ? format(startDate, 'dd MMMM yyyy', {locale}) : 'Start Date'}
               </Typography>
             </Grid>
-            <Grid item sx={{ flex: 1, textAlign: 'center' }}>
-              <ArrowRightAlt color="action" />
+            <Grid item sx={{flex: 1, textAlign: 'center'}}>
+              <ArrowRightAltIcon color="action"/>
             </Grid>
-            <Grid item sx={{ flex: 1, textAlign: 'center' }}>
+            <Grid item sx={{flex: 1, textAlign: 'center'}}>
               <Typography variant="subtitle1">
                 {endDate ? format(endDate, 'dd MMMM yyyy', {locale}) : 'End Date'}
               </Typography>
             </Grid>
           </Grid>
-          <Divider />
+          <Divider/>
           <Grid container direction="row" justifyContent="center" wrap="nowrap">
             <Month
               {...commonProps}

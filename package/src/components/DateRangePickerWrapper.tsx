@@ -1,10 +1,10 @@
 import React from 'react';
 
-import { Box } from '@mui/material';
+import {Box} from '@mui/material';
 import DateRangePicker from './DateRangePicker';
 
 // eslint-disable-next-line no-unused-vars
-import { DateRange, DefinedRange } from '../types';
+import {DateRange, DefinedRange} from '../types';
 
 export interface DateRangePickerWrapperProps {
   open: boolean;
@@ -41,7 +41,7 @@ const DateRangePickerWrapper: React.FunctionComponent<DateRangePickerWrapperProp
   const handleKeyPress = (event: any) => event?.key === 'Escape' && handleToggle();
 
   return (
-    <Box sx={{ position: 'relative' }}>
+    <Box sx={{position: 'relative'}}>
       {
         open && (
           <Box
@@ -61,7 +61,7 @@ const DateRangePickerWrapper: React.FunctionComponent<DateRangePickerWrapperProp
         )
       }
 
-      <Box sx={{ position: 'relative', zIndex: 1 }} className={wrapperClassName} >
+      <Box sx={{position: 'relative', zIndex: 1}} className={wrapperClassName}>
         <DateRangePicker {...props} />
       </Box>
     </Box>
