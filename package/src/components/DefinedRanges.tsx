@@ -8,6 +8,7 @@ type DefinedRangesProps = {
   setRange: (range: DateRange) => void;
   selectedRange: DateRange;
   ranges: DefinedRange[];
+  verticalOrientation: boolean;
 };
 
 const isSameRange = (first: DateRange, second: DateRange) => {
@@ -23,8 +24,9 @@ const DefinedRanges: React.FunctionComponent<DefinedRangesProps> = ({
                                                                       ranges,
                                                                       setRange,
                                                                       selectedRange,
+                                                                      verticalOrientation,
                                                                     }: DefinedRangesProps) => (
-  <List>
+  <List sx={{ flexDirection: verticalOrientation ? 'row' : 'column', display: 'flex', overflowY: 'scroll' }}>
     {ranges.map((range, idx) => (
       <ListItem button
                 key={idx}

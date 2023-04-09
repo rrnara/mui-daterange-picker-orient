@@ -16,6 +16,7 @@ export interface DateRangePickerWrapperProps {
   // eslint-disable-next-line no-unused-vars
   onChange: (dateRange: DateRange) => void;
   closeOnClickOutside?: boolean;
+  verticalOrientation?: boolean;
   wrapperClassName?: string;
   locale?: Locale;
 }

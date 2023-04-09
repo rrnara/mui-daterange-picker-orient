@@ -2,8 +2,8 @@
 
 A React date range picker implementation using @mui (v5).
 
-<a href='https://www.npmjs.com/package/date-range-picker-mui'>
-    <img src='https://img.shields.io/npm/v/date-range-picker-mui.svg' alt='Latest npm version'>
+<a href='https://www.npmjs.com/package/mui-daterange-picker-orient'>
+    <img src='https://img.shields.io/npm/v/mui-daterange-picker-orient.svg' alt='Latest npm version'>
 </a>
 
 ## Preview
@@ -13,16 +13,16 @@ A React date range picker implementation using @mui (v5).
 ## Usage
 
 ```bash
-npm install date-range-picker-mui --save
+npm install mui-daterange-picker-orient --save
 
 # or with yarn
-yarn add date-range-picker-mui
+yarn add mui-daterange-picker-orient
 ```
 
 ## Basic example
 ```tsx
 import React from "react";
-import { DateRangePicker, DateRange } from "date-range-picker-mui";
+import { DateRangePicker, DateRange } from "mui-daterange-picker-orient";
 
 type Props = {}
 
@@ -71,9 +71,10 @@ Name | Type                      | Required | Default value | Description
 `closeOnClickOutside` | `boolean`                 | _optional_ | `true` | defines if DateRangePicker will be closed when clicking outside of it
 `wrapperClassName` | `object`                  | _optional_ | `undefined` | defines additional wrapper style classes
 `locale` | `Locale`  (from date-dns) | _optional_ | `undefined` | defines locale to use (from date-fns package)
+`verticalOrientation` | `boolean`                 | _optional_ | `false` | defines if DateRangePicker will orient itself vertically (caller can set it for for potrait screens)
 
 ## Made possible by
 
-<a href="https://github.com/reschandreas/date-range-picker-mui/graphs/contributors">
-  <img src="https://contributors-img.web.app/image?repo=reschandreas/date-range-picker-mui" />
+<a href="https://github.com/rrnara/mui-daterange-picker-orient/graphs/contributors">
+  <img src="https://contributors-img.web.app/image?repo=rrnara/mui-daterange-picker-orient" />
 </a>
