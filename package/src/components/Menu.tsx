@@ -87,7 +87,7 @@ const Menu: React.FunctionComponent<MenuProps> = (props: MenuProps) => {
                 {startDate ? format(startDate, 'dd MMMM yyyy', {locale}) : 'Start Date'}
               </Typography>
             </Grid>
-            <Grid item sx={{flex: verticalOrientation ? 0.5 : 1, textAlign: 'center', display: 'flex', alignItems: 'center'}}>
+            <Grid item sx={{flex: verticalOrientation ? 0.5 : 1, display: 'flex', justifyContent: 'center', alignItems: 'center'}}>
               {verticalOrientation ? <ArrowDownward color="action"/> : <ArrowRightAltIcon color="action"/>}
             </Grid>
             <Grid item sx={sxText}>

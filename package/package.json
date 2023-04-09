@@ -1,6 +1,6 @@
 {
     "name": "mui-daterange-picker-orient",
-    "version": "1.0.0",
+    "version": "1.0.1",
     "description": "A React date range picker implementation using @mui, with potrait view support.",
     "author": "rrnara",
     "license": "MIT",
