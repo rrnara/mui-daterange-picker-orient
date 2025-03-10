@@ -24,9 +24,8 @@ const DefinedRanges: React.FunctionComponent<DefinedRangesProps> = ({
                                                                       ranges,
                                                                       setRange,
                                                                       selectedRange,
-                                                                      verticalOrientation
+                                                                      verticalOrientation,
                                                                     }: DefinedRangesProps) => (
-
   <List sx={{ flexDirection: verticalOrientation ? 'row' : 'column', display: 'flex', overflowY: 'scroll' }}>
     {ranges.map((range, idx) => (
       <ListItemButton
