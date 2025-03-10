@@ -1,10 +1,10 @@
 {
-    "name": "date-range-picker-mui",
+    "name": "mui-daterange-picker-orient",
     "version": "1.0.11",
     "description": "A React date range picker implementation using @mui.",
-    "author": "reschandreas",
+    "author": "rrnara",
     "license": "MIT",
-    "repository": "reschandreas/date-range-picker-mui",
+    "repository": "rrnara/mui-daterange-picker-orient",
     "main": "dist/index.js",
     "module": "dist/index.es.js",
     "jsnext:main": "dist/index.es.js",
