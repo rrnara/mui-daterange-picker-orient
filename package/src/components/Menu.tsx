@@ -8,6 +8,7 @@ import Month from './Month';
 import DefinedRanges from './DefinedRanges';
 import {DateRange, DefinedRange, NavigationAction, Setter,} from '../types';
 import {MARKERS} from './Markers';
+import {Locale} from "date-fns/locale";
 
 interface MenuProps {
   dateRange: DateRange;
@@ -67,7 +68,7 @@ const Menu: React.FunctionComponent<MenuProps> = (props: MenuProps) => {
     flex: 1,
     textAlign: 'center',
     ...(verticalOrientation ? verticalSideTextSx : {})
-  }
+  };
   return (
     <Paper elevation={5} square>
       <Grid container direction={verticalOrientation ? "column" : "row"} wrap="nowrap">
@@ -81,7 +82,7 @@ const Menu: React.FunctionComponent<MenuProps> = (props: MenuProps) => {
         </Grid>
         <Divider orientation={verticalOrientation ? "horizontal" : "vertical"} flexItem/>
         <Grid display="flex" flexDirection={verticalOrientation ? "row" : "column"}>
-          <Grid container direction={verticalOrientation ? "column" : "row"} sx={verticalOrientation ? {} : {padding: '20px 70px'}} alignItems="center">
+        <Grid container direction={verticalOrientation ? "column" : "row"} sx={verticalOrientation ? {} : {padding: '20px 70px'}} alignItems="center">
             <Grid item sx={sxText}>
               <Typography variant="subtitle1">
                 {startDate ? format(startDate, 'dd MMMM yyyy', {locale}) : 'Start Date'}

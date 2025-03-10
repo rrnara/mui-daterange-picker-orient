@@ -1,5 +1,5 @@
 import React from 'react';
-import {List, ListItem, ListItemText} from '@mui/material';
+import {List, ListItemButton, ListItemText} from '@mui/material';
 import {isSameDay} from 'date-fns';
 import {DateRange, DefinedRange} from '../types';
 
@@ -8,7 +8,7 @@ type DefinedRangesProps = {
   setRange: (range: DateRange) => void;
   selectedRange: DateRange;
   ranges: DefinedRange[];
-  verticalOrientation: boolean;
+  verticalOrientation?: boolean;
 };
 
 const isSameRange = (first: DateRange, second: DateRange) => {
@@ -28,7 +28,7 @@ const DefinedRanges: React.FunctionComponent<DefinedRangesProps> = ({
                                                                     }: DefinedRangesProps) => (
   <List sx={{ flexDirection: verticalOrientation ? 'row' : 'column', display: 'flex', overflowY: 'scroll' }}>
     {ranges.map((range, idx) => (
-      <ListItem button
+      <ListItemButton
                 key={idx}
                 onClick={() => setRange(range)}
                 sx={[
@@ -52,7 +52,7 @@ const DefinedRanges: React.FunctionComponent<DefinedRangesProps> = ({
         >
           {range.label}
         </ListItemText>
-      </ListItem>
+      </ListItemButton>
     ))}
   </List>
 );

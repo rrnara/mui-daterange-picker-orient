@@ -13,7 +13,7 @@ interface DayProps {
   value: number | string;
 }
 
-const Day: React.FunctionComponent<DayProps> = ({
+const DayComponent: React.FunctionComponent<DayProps> = ({
                                                   startOfRange,
                                                   endOfRange,
                                                   disabled,
@@ -68,4 +68,4 @@ const Day: React.FunctionComponent<DayProps> = ({
   );
 };
 
-export default Day;
+export default DayComponent;

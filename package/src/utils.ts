@@ -14,6 +14,7 @@ import {
   startOfMonth,
   startOfWeek,
 } from 'date-fns';
+import {Locale} from "date-fns/locale";
 import {DateRange} from './types';
 
 export const identity = <T>(x: T) => x;

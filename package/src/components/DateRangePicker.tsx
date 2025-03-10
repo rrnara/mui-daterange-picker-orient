@@ -5,6 +5,7 @@ import {getValidatedMonths, parseOptionalDate} from '../utils';
 import {getDefaultRanges} from '../defaults';
 import Menu from './Menu';
 import {Marker, MARKERS} from './Markers';
+import {Locale} from "date-fns/locale";
 
 interface DateRangePickerProps {
   open: boolean;

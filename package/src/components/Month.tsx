@@ -3,9 +3,11 @@ import {Grid, Paper, Typography} from "@mui/material";
 import {format, getDate, isSameMonth, isToday, isWithinInterval} from "date-fns";
 import {chunks, getDaysInMonth, inDateRange, isEndOfRange, isRangeSameDay, isStartOfRange} from "../utils";
 import Header from "./Header";
-import Day from "./Day";
+import {Locale} from "date-fns/locale";
 
 import {DateRange, NavigationAction} from "../types";
+import {Day} from "date-fns/types";
+import DayComponent from "./Day";
 
 
 interface MonthProps {
@@ -46,8 +48,9 @@ const Month: React.FunctionComponent<MonthProps> = (props: MonthProps) => {
   } = props;
 
   const weekStartsOn = locale?.options?.weekStartsOn || 0;
-  const WEEK_DAYS = typeof locale !== 'undefined'
-    ? [...Array(7).keys()].map(d => locale.localize?.day((d + weekStartsOn) % 7, {
+  const localizer = locale?.localize;
+  const WEEK_DAYS = localizer
+    ? [...Array(7).keys()].map(d => ((d + weekStartsOn) % 7) as Day).map(d => localizer.day(d, {
       width: 'short',
       context: 'standalone'
     }))
@@ -106,7 +109,7 @@ const Month: React.FunctionComponent<MonthProps> = (props: MonthProps) => {
                 const highlighted = inDateRange(dateRange, day) || helpers.inHoverRange(day);
 
                 return (
-                  <Day
+                  <DayComponent
                     key={format(day, "dd-MM-yyyy")}
                     filled={isStart || isEnd}
                     outlined={isToday(day)}

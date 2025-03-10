@@ -3,6 +3,8 @@ import React from 'react';
 import ChevronLeftIcon from '@mui/icons-material/ChevronLeft';
 import ChevronRightIcon from '@mui/icons-material/ChevronRight';
 import {getMonth, getYear, setMonth, setYear} from 'date-fns';
+import {Locale} from "date-fns/locale";
+import {Month} from "date-fns/types";
 
 interface HeaderProps {
   date: Date;
@@ -32,7 +34,7 @@ const Header: React.FunctionComponent<HeaderProps> = ({
                                                         locale
                                                       }: HeaderProps) => {
   const MONTHS = typeof locale !== 'undefined'
-    ? [...Array(12).keys()].map(d => locale.localize?.month(d, {width: 'abbreviated', context: 'standalone'}))
+    ? [...Array(12).keys()].map(d => d as Month).map(d => locale.localize?.month(d, {width: 'abbreviated', context: 'standalone'}))
     : ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'June', 'July', 'Aug', 'Sept', 'Oct', 'Nov', 'Dec'];
 
   const handleMonthChange = (event: SelectChangeEvent<number>) => {

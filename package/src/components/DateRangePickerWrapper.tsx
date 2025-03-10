@@ -2,6 +2,7 @@ import React from 'react';
 
 import {Box} from '@mui/material';
 import DateRangePicker from './DateRangePicker';
+import {Locale} from "date-fns/locale";
 
 // eslint-disable-next-line no-unused-vars
 import {DateRange, DefinedRange} from '../types';
@@ -19,6 +20,7 @@ export interface DateRangePickerWrapperProps {
   verticalOrientation?: boolean;
   wrapperClassName?: string;
   locale?: Locale;
+  verticalOrientation?: boolean;
 }
 
 const DateRangePickerWrapper: React.FunctionComponent<DateRangePickerWrapperProps> = (
